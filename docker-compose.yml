@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  app:
+    build: .
+    ports:
+      - "3003:3000" 
+    restart: unless-stopped
+    command: ["pm2-runtime", "start", "serve", "-s", "build", "-l", "3000"]
+    # volumes:
+    #   - app-data:/usr/src/app # Persist application data
+
+# volumes:
+#   app-data:
