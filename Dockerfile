@@ -12,8 +12,6 @@ WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/build ./build
 # Install a server for serving the build directory, if not already installed
 RUN npm install -g serve
-# Copy any other required files like .env
-COPY .env ./
 
 EXPOSE 3000
 # Use serve to serve the static files from the build directory
